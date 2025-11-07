@@ -4,6 +4,7 @@
 // Design      : PWM_design
 // Author      : Julio
 // Company     : SiCI
+`default_nettype none
 
 module PWM_module (
   input  wire       clock,
@@ -46,3 +47,4 @@ module PWM_module (
 
   assign PWM = temp_PWM;
 endmodule
+
