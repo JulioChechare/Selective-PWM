@@ -25,6 +25,6 @@ PWM_module c1 (.clock(clk), .enable(ui_in[3]), .speed(ui_in[2:0]), .PWM(uo_out[0
     assign uo_out [7:1] = 7'b0000000; // at 0.   
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, rst_n, 1'b0};
+    wire _unused = &{ui_in[7:4],ena, rst_n, 1'b0};
 
 endmodule
