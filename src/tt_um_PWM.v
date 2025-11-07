@@ -18,13 +18,18 @@ module tt_um_PWM (
 
   // All output pins must be assigned. If not used, assign to 0.
 
-PWM_module c1 (.clock(clk), .enable(ui_in[3]), .speed(ui_in[2:0]), .PWM(uo_out[0]));
+PWM_module c1 (
+    .clock(clk), 
+    .enable(ui_in[3]), 
+    .speed(ui_in[2:0]), 
+    .PWM(uo_out[0])
+);
 
-    assign uio_oe[7:0] =  8'b00000000; //Bi-directional port as output.
-    assign uio_out[7:0] = 8'b00000000; // at 0. 
-    assign uo_out [7:1] = 7'b0000000; // at 0.   
+    assign uio_oe = 8'b0; 
+    assign uio_out = 8'b0; 
+    assign uo_out [7:1] = 0;    
 
   // List all unused inputs to prevent warnings
-    wire _unused = &{uio_in[7:0], ui_in[7:4], ena, rst_n, 1'b0};
+    wire _unused = &{uio_in[7:0], ui_in[7:4], ena, rst_n};
 
 endmodule
