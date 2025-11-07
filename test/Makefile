@@ -6,7 +6,7 @@ SIM ?= icarus
 WAVES ?= 1
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = tt_um_PWM.v
+PROJECT_SOURCES = tt_um_PWM.v PWM.v
 
 ifneq ($(GATES),yes)
 
