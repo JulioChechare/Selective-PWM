@@ -20,11 +20,9 @@ module tt_um_PWM (
 
 PWM_module c1 (.clock(clk), .enable(ui_in[3]), .speed(ui_in[2:0]), .PWM(uo_out[0]));
 
-    assign uio_oe = 8'b11111111; //Bi-directional port as output.
+    assign uio_oe[7:0] = 8'b11111111; //Bi-directional port as output.
     assign uio_out[7:0] = 8'b00000000; // at 0. 
-    assign uo_out [7:1] = 7'b0000000; // at 0.
-    assign ui_in[7:4] = 4'b0000; //at 0.
-    
+    assign uo_out [7:1] = 7'b0000000; // at 0.   
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, rst_n, 1'b0};
